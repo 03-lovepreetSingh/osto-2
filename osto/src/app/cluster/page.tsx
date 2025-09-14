@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, memo } from 'react'
+import React, { useState } from 'react'
 import {
   ChevronDown,
   Plus,
@@ -10,12 +10,12 @@ import {
   Cpu,
   X,
   Check,
-  AlertCircle,
+
   Clock,
   Activity,
-  HardDrive,
+
   Network,
-  Shield,
+
 } from 'lucide-react'
 
 // Define types for our data

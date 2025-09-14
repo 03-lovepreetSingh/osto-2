@@ -10,10 +10,10 @@ import {
   Settings,
   Key,
   X,
-  Check,
+
   Mail,
   User,
-  Lock,
+
   AlertCircle,
   Clock,
 } from 'lucide-react'
@@ -35,13 +35,7 @@ interface RoleType {
   permissions: string[]
   color: string
 }
-interface AuthSettingType {
-  id: string
-  name: string
-  description: string
-  enabled: boolean
-  icon: React.ReactNode
-}
+
 export default function UsersPermissionsPage() {
   // Users state
   const [users, setUsers] = useState<UserType[]>([

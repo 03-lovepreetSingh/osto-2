@@ -1,8 +1,8 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Info, ExternalLink, Check, X } from 'lucide-react'
-
+import { Info,  Check, X } from 'lucide-react'
+import Image    from 'next/image'
 type IntegrationStatus =
   | 'not connected'
   | 'connected'
@@ -30,7 +30,7 @@ export default function IntegrationsPage() {
       id: 'azure-devops',
       title: 'Azure DevOps',
       icon: (
-        <img
+        <Image
           src="https://uploadthingy.s3.us-west-1.amazonaws.com/9ecdzM4ArTurTv7WkAXvaY/orca-blog-ai-spm-image-2.webp"
           alt="Azure"
           className="w-5 h-5"

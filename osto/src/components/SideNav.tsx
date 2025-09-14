@@ -15,7 +15,6 @@ import {
   Server,
   Infinity,
   Gauge,
-  Key,
   X,
 } from 'lucide-react'
 import { Button } from './ui/button'
@@ -195,7 +194,7 @@ export const SideNav = ({ isOpen, closeSidebar }: SideNavProps) => {
               </span>
             </div>
             <div className="flex items-center mb-2">
-              <div
+              <Gauge
                 size={18}
                 className={`mr-2 ${isActive('/inventory') ? 'text-blue-600' : 'text-gray-500'}`}
               />

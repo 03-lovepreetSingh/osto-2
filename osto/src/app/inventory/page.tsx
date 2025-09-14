@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { ChevronDown, Search, ChevronRight } from 'lucide-react'
+import { ChevronDown, ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 
 export default function InventoryPage() {

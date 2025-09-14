@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { ChevronDown, Search, X } from 'lucide-react'
+import { ChevronDown,  X } from 'lucide-react'
 
 interface BillingInvoiceModalProps {
   onClose: () => void

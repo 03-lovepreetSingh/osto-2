@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { ChevronDown, Save, MoreVertical, ExternalLink } from 'lucide-react'
+import { ChevronDown,  MoreVertical, ExternalLink } from 'lucide-react'
 import { Button } from './ui/button'
 
 export const DashboardHeader = () => {
