@@ -33,7 +33,14 @@ import {
 } from 'lucide-react'
 
 // Temporary placeholder components until UI components are created
-const Button = ({ children, variant, size, className, ...props }: any) => {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode
+  variant?: 'outline' | 'ghost' | 'default'
+  size?: 'sm' | 'default'
+  className?: string
+}
+
+const Button = ({ children, variant, size, className, ...props }: ButtonProps) => {
   const baseClasses = "px-3 py-1 rounded inline-flex items-center justify-center"
   const variantClasses = {
     outline: "border border-gray-300 bg-white text-gray-700 hover:bg-gray-50",
@@ -55,27 +62,47 @@ const Button = ({ children, variant, size, className, ...props }: any) => {
   )
 }
 
-const Card = ({ children, className, ...props }: any) => (
-  <div className={`bg-white border rounded-md ${className}`} {...props}>
+interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
+  children: React.ReactNode
+  className?: string
+}
+
+const Card = ({ children, className, ...props }: CardProps) => (
+  <div className={`bg-white border rounded-md ${className || ''}`} {...props}>
     {children}
   </div>
 )
 
-const CardHeader = ({ children, className, ...props }: any) => (
-  <div className={`p-4 border-b ${className}`} {...props}>
+interface CardHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
+  children: React.ReactNode
+  className?: string
+}
+
+const CardHeader = ({ children, className, ...props }: CardHeaderProps) => (
+  <div className={`p-4 border-b ${className || ''}`} {...props}>
     {children}
   </div>
 )
 
-const CardContent = ({ children, className, ...props }: any) => (
-  <div className={`p-4 ${className}`} {...props}>
+interface CardContentProps extends React.HTMLAttributes<HTMLDivElement> {
+  children: React.ReactNode
+  className?: string
+}
+
+const CardContent = ({ children, className, ...props }: CardContentProps) => (
+  <div className={`p-4 ${className || ''}`} {...props}>
     {children}
   </div>
 )
 
-const SecurityTabs = ({ activeTab, setActiveTab }: any) => (
+interface SecurityTabsProps {
+  activeTab: SecuritySection
+  setActiveTab: (tab: SecuritySection) => void
+}
+
+const SecurityTabs = ({ activeTab, setActiveTab }: SecurityTabsProps) => (
   <div className="flex space-x-4 border-b">
-    {['general', 'authentication', 'network', 'data', 'compliance', 'advanced', 'alerts'].map((tab) => (
+    {(['general', 'authentication', 'network', 'data', 'compliance', 'advanced', 'alerts'] as SecuritySection[]).map((tab) => (
       <button
         key={tab}
         onClick={() => setActiveTab(tab)}

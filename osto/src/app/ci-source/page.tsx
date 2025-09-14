@@ -300,7 +300,7 @@ export default function CISourcePage() {
               </span>
             </div>
             <p className="text-sm text-gray-500 mb-1">
-              Package 'log4j' with known vulnerability (CVE-2021-44228) in
+              Package &apos log4j &apos with known vulnerability (CVE-2021-44228) in
               osto-security/backend-service
             </p>
             <div className="flex items-center justify-between text-sm">
