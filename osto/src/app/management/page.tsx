@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import {
   ChevronDown,
@@ -9,7 +11,8 @@ import {
   Shield,
   RefreshCw,
 } from 'lucide-react'
-export const ManagementPage = () => {
+
+export default function ManagementPage() {
   return (
     <div className="container mx-auto p-6">
       <div className="flex items-center justify-between mb-6">
