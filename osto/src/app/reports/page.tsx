@@ -12,24 +12,24 @@ import {
 
 export default function ReportsLogsPage() {
   return (
-    <div className="container mx-auto p-6">
-      <div className="flex items-center justify-between mb-6">
+    <div className="container mx-auto p-4 lg:p-6 max-w-full overflow-x-hidden">
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between mb-6 gap-4">
         <div className="flex items-center">
-          <h1 className="text-2xl font-medium">Reports & Logs</h1>
+          <h1 className="text-xl sm:text-2xl font-medium">Reports & Logs</h1>
         </div>
-        <div className="flex items-center space-x-2">
-          <button className="flex items-center space-x-1 border rounded px-3 py-1.5 text-sm">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
+          <button className="flex items-center space-x-1 border rounded px-3 py-1.5 text-sm justify-center">
             <Calendar size={14} className="mr-1" />
             <span>Last 7 Days</span>
             <ChevronDown size={14} className="ml-1" />
           </button>
-          <button className="flex items-center space-x-1 border rounded px-3 py-1.5 text-sm">
+          <button className="flex items-center space-x-1 border rounded px-3 py-1.5 text-sm justify-center">
             <Download size={14} className="mr-1" />
             <span>Export</span>
           </button>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-6">
         <div className="bg-white p-4 rounded-md border">
           <div className="flex items-center justify-between mb-4">
             <h2 className="font-medium">Security Summary</h2>
@@ -165,16 +165,17 @@ export default function ReportsLogsPage() {
           </button>
         </div>
         <div className="p-4">
-          <table className="w-full">
-            <thead className="bg-gray-50 text-sm">
-              <tr>
-                <th className="text-left p-2">Report Name</th>
-                <th className="text-left p-2">Generated</th>
-                <th className="text-left p-2">Type</th>
-                <th className="text-left p-2">Size</th>
-                <th className="text-left p-2">Actions</th>
-              </tr>
-            </thead>
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[600px]">
+              <thead className="bg-gray-50 text-sm">
+                <tr>
+                  <th className="text-left p-2 whitespace-nowrap">Report Name</th>
+                  <th className="text-left p-2 whitespace-nowrap">Generated</th>
+                  <th className="text-left p-2 whitespace-nowrap">Type</th>
+                  <th className="text-left p-2 whitespace-nowrap">Size</th>
+                  <th className="text-left p-2 whitespace-nowrap">Actions</th>
+                </tr>
+              </thead>
             <tbody>
               <tr className="border-b">
                 <td className="p-2">
@@ -228,9 +229,9 @@ export default function ReportsLogsPage() {
                 </td>
               </tr>
             </tbody>
-          </table>
+            </table>
+          </div>
         </div>
-      </div>
       <div className="bg-white rounded-md border">
         <div className="flex items-center justify-between p-4 border-b">
           <div className="flex items-center">
@@ -357,6 +358,7 @@ export default function ReportsLogsPage() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   )
 }

@@ -14,30 +14,31 @@ import {
 
 export default function OrganizationPage() {
   return (
-    <div className="container mx-auto p-6">
-      <div className="flex items-center justify-between mb-6">
+    <div className="container mx-auto p-4 lg:p-6 max-w-full overflow-x-hidden">
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between mb-6 gap-4">
         <div className="flex items-center">
-          <h1 className="text-2xl font-medium">Organization</h1>
+          <h1 className="text-xl sm:text-2xl font-medium">Organization</h1>
         </div>
-        <div className="flex items-center space-x-2">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
           <div className="relative">
             <input
               type="text"
               placeholder="Search organizations..."
-              className="border rounded px-10 py-1.5 text-sm w-64"
+              className="border rounded px-10 py-1.5 text-sm w-full sm:w-64"
             />
             <Search
               size={16}
               className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
             />
           </div>
-          <button className="bg-blue-500 text-white rounded px-3 py-1.5 text-sm flex items-center">
+          <button className="bg-blue-500 text-white rounded px-3 py-1.5 text-sm flex items-center justify-center">
             <Plus size={14} className="mr-1" />
-            <span>Add Organization</span>
+            <span className="hidden sm:inline">Add Organization</span>
+            <span className="sm:hidden">Add Org</span>
           </button>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 mb-6">
         <div className="bg-white p-4 rounded-md border">
           <div className="flex items-center mb-4">
             <Building size={18} className="mr-2 text-gray-500" />

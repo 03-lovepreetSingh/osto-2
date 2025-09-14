@@ -33,6 +33,8 @@ export default function IntegrationsPage() {
         <Image
           src="https://uploadthingy.s3.us-west-1.amazonaws.com/9ecdzM4ArTurTv7WkAXvaY/orca-blog-ai-spm-image-2.webp"
           alt="Azure"
+          width={20}
+          height={20}
           className="w-5 h-5"
         />
       ),

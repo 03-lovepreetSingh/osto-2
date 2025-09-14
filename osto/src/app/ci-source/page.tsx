@@ -15,38 +15,41 @@ import {
 
 export default function CISourcePage() {
   return (
-    <div className="container mx-auto p-6">
-      <div className="flex items-center justify-between mb-6">
-        <div className="flex items-center">
-          <h1 className="text-2xl font-medium">CI Source</h1>
-          <div className="ml-4 flex items-center border rounded px-2 py-1">
+    <div className="container mx-auto p-4 lg:p-6 max-w-full overflow-x-hidden">
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between mb-6 gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+          <h1 className="text-xl sm:text-2xl font-medium">CI Source</h1>
+          <div className="flex items-center border rounded px-2 py-1 w-fit">
             <span className="text-sm mr-2">All Sources</span>
             <ChevronDown size={14} />
           </div>
         </div>
-        <div className="flex items-center space-x-2">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
           <div className="relative">
             <input
               type="text"
               placeholder="Search repositories..."
-              className="border rounded px-10 py-1.5 text-sm w-64"
+              className="border rounded px-10 py-1.5 text-sm w-full sm:w-64"
             />
             <Search
               size={16}
               className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
             />
           </div>
-          <button className="flex items-center space-x-1 border rounded px-3 py-1.5 text-sm">
-            <RefreshCw size={14} className="mr-1" />
-            <span>Refresh</span>
-          </button>
-          <button className="bg-blue-500 text-white rounded px-3 py-1.5 text-sm flex items-center">
-            <Plus size={14} className="mr-1" />
-            <span>Connect Repository</span>
-          </button>
+          <div className="flex gap-2">
+            <button className="flex items-center space-x-1 border rounded px-3 py-1.5 text-sm flex-1 sm:flex-initial justify-center">
+              <RefreshCw size={14} className="mr-1" />
+              <span>Refresh</span>
+            </button>
+            <button className="bg-blue-500 text-white rounded px-3 py-1.5 text-sm flex items-center flex-1 sm:flex-initial justify-center">
+              <Plus size={14} className="mr-1" />
+              <span className="hidden sm:inline">Connect Repository</span>
+              <span className="sm:hidden">Connect</span>
+            </button>
+          </div>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-6">
         <div className="bg-white p-4 rounded-md border">
           <div className="flex items-center justify-between mb-4">
             <h2 className="font-medium">Connected Sources</h2>
@@ -124,7 +127,7 @@ export default function CISourcePage() {
         </div>
       </div>
       <div className="bg-white rounded-md border overflow-hidden mb-6">
-        <div className="flex items-center justify-between p-4 border-b">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between p-4 border-b gap-4">
           <div className="flex items-center">
             <GitBranch size={18} className="mr-2 text-gray-500" />
             <h2 className="font-medium">Connected Repositories</h2>
@@ -137,8 +140,9 @@ export default function CISourcePage() {
             </button>
           </div>
         </div>
-        <table className="w-full">
-          <thead className="bg-gray-50 text-sm">
+        <div className="overflow-x-auto">
+          <table className="w-full min-w-[700px]">
+            <thead className="bg-gray-50 text-sm">
             <tr>
               <th className="text-left p-3">Repository</th>
               <th className="text-left p-3">Branch</th>
@@ -296,11 +300,11 @@ export default function CISourcePage() {
                 <span className="font-medium">Vulnerable Dependency</span>
               </div>
               <span className="bg-yellow-100 text-yellow-600 px-2 py-0.5 rounded text-xs">
-                Medium Risk
+                High Risk
               </span>
             </div>
             <p className="text-sm text-gray-500 mb-1">
-              Package &apos log4j &apos with known vulnerability (CVE-2021-44228) in
+              Package &apos;log4j&apos; with known vulnerability (CVE-2021-44228) in
               osto-security/backend-service
             </p>
             <div className="flex items-center justify-between text-sm">
@@ -333,6 +337,7 @@ export default function CISourcePage() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   )
 }

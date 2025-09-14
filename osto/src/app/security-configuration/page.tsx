@@ -131,12 +131,12 @@ export default function SecurityConfigurationPage() {
   // State to track which section is active
   const [activeTab, setActiveTab] = useState<SecuritySection>('general')
   return (
-    <div className="container mx-auto p-4 lg:p-6">
-      <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+    <div className="container mx-auto p-4 lg:p-6 max-w-full overflow-x-hidden">
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between mb-6 gap-4">
         <div>
-          <h1 className="text-2xl font-medium">Security Configuration</h1>
+          <h1 className="text-xl sm:text-2xl font-medium">Security Configuration</h1>
         </div>
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
           <Button variant="outline" size="sm" className="flex items-center">
             <RefreshCw size={14} className="mr-1" />
             <span>Refresh</span>

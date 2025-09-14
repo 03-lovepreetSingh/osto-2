@@ -114,17 +114,17 @@ const BillingInvoiceModal = ({ onClose }: BillingInvoiceModalProps) => {
 export default function AccountCenterPage() {
   const [showInvoice, setShowInvoice] = useState(false)
   return (
-    <div className="container mx-auto p-6">
-      <div className="flex items-center justify-between mb-6">
-        <div className="flex items-center">
-          <h1 className="text-2xl font-medium">Account Center</h1>
-          <div className="ml-4 flex items-center border rounded px-2 py-1">
+    <div className="container mx-auto p-4 lg:p-6 max-w-full overflow-x-hidden">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+          <h1 className="text-xl sm:text-2xl font-medium">Account Center</h1>
+          <div className="flex items-center border rounded px-2 py-1 w-fit">
             <span className="text-sm mr-2">Osto Default</span>
             <ChevronDown size={14} />
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6">
         <div className="bg-white p-4 rounded-md border">
           <h2 className="text-lg font-medium mb-4">Account Summary</h2>
           <div className="space-y-3">
@@ -223,16 +223,17 @@ export default function AccountCenterPage() {
       </div>
       <div className="mt-6 bg-white p-4 rounded-md border">
         <h2 className="text-lg font-medium mb-4">Account Activity</h2>
-        <table className="w-full">
-          <thead className="bg-gray-50 text-sm">
-            <tr>
-              <th className="text-left p-2">Date</th>
-              <th className="text-left p-2">User</th>
-              <th className="text-left p-2">Action</th>
-              <th className="text-left p-2">Status</th>
-            </tr>
-          </thead>
-          <tbody>
+        <div className="overflow-x-auto">
+          <table className="w-full min-w-[600px]">
+            <thead className="bg-gray-50 text-sm">
+              <tr>
+                <th className="text-left p-2 whitespace-nowrap">Date</th>
+                <th className="text-left p-2 whitespace-nowrap">User</th>
+                <th className="text-left p-2 whitespace-nowrap">Action</th>
+                <th className="text-left p-2 whitespace-nowrap">Status</th>
+              </tr>
+            </thead>
+            <tbody>
             <tr className="border-b">
               <td className="p-2">2024-08-16 14:23</td>
               <td className="p-2">admin@ostodemo.com</td>
@@ -273,8 +274,9 @@ export default function AccountCenterPage() {
                 </span>
               </td>
             </tr>
-          </tbody>
-        </table>
+            </tbody>
+          </table>
+        </div>
       </div>
       {showInvoice && (
         <BillingInvoiceModal onClose={() => setShowInvoice(false)} />
